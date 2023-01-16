@@ -8,7 +8,7 @@ const getDefaultArray = () => {
   return [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 };
 
-let numbers = getDefaultArray();
+var numbers = getDefaultArray();
 
 console.log(numbers);
 
