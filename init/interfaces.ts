@@ -13,9 +13,9 @@ interface Person {
 
 let pessoa: Person;
 
-//agora pessoa terá as propriedades .name e .age
+//'pessoa' terá as propriedades .name e .age
 
-//podemos verificar que alguns tipos primitivos possuem esses tipos de interfaces
+//podemos verificar que alguns tipos primitivos possuem "interfaces"
 
 //objetos do tipo number geralmente possuem um método .toString() e os objetos do tipo string geralmente possuem propriedades como .lenght
 
