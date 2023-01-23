@@ -9,25 +9,24 @@ import Stack from "./Stack";
 // concat()
 
 class ExtendedStack extends Stack {
+  /**
+   *
+   * @returns an string of stack elements
+   */
+  public toString() {
+    return this.items.toString();
+  }
 
-    /**
-     * 
-     * @returns an string of stack elements
-     */
-    public toString(){
-        return this.items.toString()
-    }
-
-    /**
-     * This methods concats two stacks
-     * @param stack 
-     */
-    public concat(stack: Stack | ExtendedStack){
-        this.items = this.items.concat(stack.items)
-    }
+  /**
+   * This methods concats two stacks
+   * @param stack
+   */
+  public concat(stack: Stack | ExtendedStack) {
+    this.items = this.items.concat(stack.items);
+  }
 }
 
-export default ExtendedStack
+export default ExtendedStack;
 
 // const stack = new ExtendedStack()
 

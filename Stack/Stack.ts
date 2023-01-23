@@ -4,62 +4,62 @@
 //nos códigos temos o exemplo dos stashs que são trechos de códigos salvos em uma pilha para retorno posterior
 
 class Stack {
-    items: any[];
+  items: any[];
 
-    constructor(values: any[] = []) {
-        this.items = values;
-    }
+  constructor(values: any[] = []) {
+    this.items = values;
+  }
 
-    /**
-     * Adiciona um elemento, ou varios no topo
-     */
-    public push (...elements: (number | number[] | string | string[])[]) {
-        elements.forEach((el: any) => {
-            this.items.push(el)
-        });
-    }
+  /**
+   * Adiciona um elemento, ou varios no topo
+   */
+  public push(...elements: (number | number[] | string | string[])[]) {
+    elements.forEach((el: any) => {
+      this.items.push(el);
+    });
+  }
 
-    /**
-     * Remove o elemento do topo e retorna ele
-     */
-    public pop () {
-        this.items.pop()
-    }
+  /**
+   * Remove o elemento do topo e retorna ele
+   */
+  public pop() {
+    return this.items.pop();
+  }
 
-    /**
-     * @return o elemento no topo da pilha
-     */
-    public peek () {
-        return this.items[this.items.length - 1]
-    }
+  /**
+   * @return o elemento no topo da pilha
+   */
+  public peek() {
+    return this.items[this.items.length - 1];
+  }
 
-    /**
-     * 
-     * @returns true caso tenha valores, false caso vazio
-     */
-    public isEmpty(): boolean {
-        const isStackEmpty = this.items.length === 0 ? true : false
+  /**
+   *
+   * @returns true caso tenha valores, false caso vazio
+   */
+  public isEmpty(): boolean {
+    const isStackEmpty = this.items.length === 0 ? true : false;
 
-        return isStackEmpty
-    }
+    return isStackEmpty;
+  }
 
-    /**
-     * Remove todos os elementos da pilha
-     */
-    public clear (): void {
-        this.items = []
-    }
+  /**
+   * Remove todos os elementos da pilha
+   */
+  public clear(): void {
+    this.items = [];
+  }
 
-    /**
-     * 
-     * @returns numero de elementos na pilha
-     */
-    public size (): number {
-        return this.items.length
-    }
+  /**
+   *
+   * @returns numero de elementos na pilha
+   */
+  public size(): number {
+    return this.items.length;
+  }
 }
 
-export default Stack
+export default Stack;
 
 //Podemos iniciar com valores
 // const pilha = new Stack([2, 4, 5, 2]);

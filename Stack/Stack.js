@@ -25,7 +25,7 @@ var Stack = /** @class */ (function () {
      * Remove o elemento do topo e retorna ele
      */
     Stack.prototype.pop = function () {
-        this.items.pop();
+        return this.items.pop();
     };
     /**
      * @return o elemento no topo da pilha
