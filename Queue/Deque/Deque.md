@@ -10,7 +10,7 @@ First In First Out, quem entra primeiro, sai primeiro
 
 ## LIFO 
 
-Last in First Out
+Last in First Out, quem entra por ultimo sai primeiro
 
 Eles podem aproveitar tanto dos conceitos de filas como de pilhas
 
