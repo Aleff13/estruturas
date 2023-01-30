@@ -53,18 +53,40 @@ class SuperSet extends SetTs implements SuperSetInterface {
 
   /**
    * returns a set where set - this.set
+   * Tudo que temos em this.set tirando otherSet
    * @param otherSet
    */
   difference(otherSet: SetTs | SuperSetInterface): SetTs | SuperSetInterface {
-    throw new Error("Method not implemented.");
+    const difference = new SetTs()
+    let values = this.values()
+
+    values.forEach(val => {
+      if (!otherSet.has(val)) {
+        difference.add(val)
+      }
+    })
+
+    return difference
   }
 
   /**
-   * returns a boolean where set isSubsetOf this.set
+   * returns a boolean where this.set isSubsetOf otherSet
+   * Basicamente verifica se this.set está contido em otherSet
    * @param otherSet
    */
   isSubsetOf(otherSet: SetTs | SuperSetInterface): boolean {
-    throw new Error("Method not implemented.");
+    if (this.size() > otherSet.size()) {
+      return false
+    }
+    let isSubset = true;
+    this.values().every(value => {
+      if(!otherSet.has(value)) {
+        isSubset = false;
+        return false
+      }
+      return true
+    })
+    return isSubset
   }
 }
 

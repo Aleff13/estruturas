@@ -58,17 +58,37 @@ var SuperSet = /** @class */ (function (_super) {
     };
     /**
      * returns a set where set - this.set
+     * Tudo que temos em this.set tirando otherSet
      * @param otherSet
      */
     SuperSet.prototype.difference = function (otherSet) {
-        throw new Error("Method not implemented.");
+        var difference = new Set_1["default"]();
+        var values = this.values();
+        values.forEach(function (val) {
+            if (!otherSet.has(val)) {
+                difference.add(val);
+            }
+        });
+        return difference;
     };
     /**
-     * returns a boolean where set isSubsetOf this.set
+     * returns a boolean where this.set isSubsetOf otherSet
+     * Basicamente verifica se this.set está contido em otherSet
      * @param otherSet
      */
     SuperSet.prototype.isSubsetOf = function (otherSet) {
-        throw new Error("Method not implemented.");
+        if (this.size() > otherSet.size()) {
+            return false;
+        }
+        var isSubset = true;
+        this.values().every(function (value) {
+            if (!otherSet.has(value)) {
+                isSubset = false;
+                return false;
+            }
+            return true;
+        });
+        return isSubset;
     };
     return SuperSet;
 }(Set_1["default"]));
