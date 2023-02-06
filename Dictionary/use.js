@@ -1,0 +1,12 @@
+"use strict";
+exports.__esModule = true;
+var Dictionary_1 = require("./Dictionary");
+var dic = new Dictionary_1["default"]();
+dic.set("alo", "ashaus");
+dic.set("cache1", "ashaus");
+dic.set("cache2", "ashaus");
+console.log(dic.isEmpty());
+console.log(dic.keys());
+console.log(dic.values());
+console.log(dic.keyValues());
+console.log(dic.get("alo"));

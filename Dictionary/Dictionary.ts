@@ -9,8 +9,8 @@ interface DictionaryInterface {
   clear(): void;
   size(): number;
   isEmpty(): boolean;
-  keys(): string[] | null;
-  values(): string[] | null;
+  keys(): string[] | [];
+  values(): string[] | [];
   keyValues(): any[] | null;
   forEach(callBackFn: void): void;
 }
@@ -30,7 +30,12 @@ class Dictionary implements DictionaryInterface {
       console.error(msg);
       return;
     }
-    this.table[this.toStrFn(key)] = value;
+    if (key != null && value != null) {
+      const tableKey = this.toStrFn(key);
+      this.table[tableKey] = this.toStrFn(value);
+      return;
+    }
+    return;
   }
   remove(key: string): void {
     //early return
@@ -59,23 +64,42 @@ class Dictionary implements DictionaryInterface {
     return Object.keys(this.table).length;
   }
   isEmpty(): boolean {
-    return Object.keys(this.table).length ? true : false;
+    return Object.keys(this.table).length ? false : true;
   }
-  keys(): string[] | null {
+  keys(): string[] | [] {
+    //early return
+    if (this.isEmpty()) {
+      return [];
+    }
     return Object.keys(this.table);
   }
-  values(): string[] {
+  values(): string[] | [] {
+    //early return
+    if (this.isEmpty()) {
+      return [];
+    }
     const keys = Object.keys(this.table);
-    let values: string[];
+    let values = new Array();
 
     keys.forEach((key) => {
-      values.push(key);
+      values.push(this.table[this.toStrFn(key)]);
     });
 
     return values;
   }
   keyValues(): any[] {
-    throw new Error("Method not implemented.");
+    //early return
+    if (this.isEmpty()) {
+      return [];
+    }
+    const keys = Object.keys(this.table);
+    let values = new Array();
+    console.log({ keys });
+    keys.forEach((key) => {
+      let valuePair = `${key}, ${this.table[this.toStrFn(key)]}`;
+      values.push(valuePair);
+    });
+    return values;
   }
   forEach(callBackFn: void): void {
     throw new Error("Method not implemented.");
@@ -83,15 +107,3 @@ class Dictionary implements DictionaryInterface {
 }
 
 export default Dictionary;
-
-const redisAbstraction = new Dictionary();
-
-console.log(redisAbstraction.size());
-console.log(redisAbstraction.isEmpty());
-redisAbstraction.set("cache", "myStupidValue");
-redisAbstraction.set("dois", "myStupidValue");
-console.log(redisAbstraction.size());
-console.log(redisAbstraction.isEmpty());
-
-console.log(redisAbstraction.get("cache"));
-console.log(redisAbstraction.keys());
