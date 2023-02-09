@@ -4,10 +4,10 @@ Os dicionários armazenam valores únicos
 
 Tópicos abordados
 
-* Estrutura de dicionário
-* Estrutura de Hash
-* Tratamento de colisões em tabelas hash
-* Classes Map, WeakMap e WeakSet da EMCMAScript 2015
+- Estrutura de dicionário
+- Estrutura de Hash
+- Tratamento de colisões em tabelas hash
+- Classes Map, WeakMap e WeakSet da EMCMAScript 2015
 
 Os dicionários armazenam pares de chave e valor, em que a chave pode ser utilizada para encontrar um elemento
 
@@ -17,4 +17,4 @@ Os dicionarios também são conhecidos como mapas, tabela de simbolos e array as
 
 Podemos utilizalos para salvar endereços de referência de objetos.
 
-Exemplos nas tecnologias do dia a dia, no chrome dentro do dev tools na aba memory/menmória 
+Exemplos nas tecnologias do dia a dia, no chrome dentro do dev tools na aba memory/menmória

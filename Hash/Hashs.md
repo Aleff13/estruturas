@@ -18,3 +18,8 @@ Um difencial dos hashtables é sua performance de busca, baseados em chaves úni
 Os valores do resultado serão usados como chave nas tabelas
 
 Assim sua busca se torna muito mais rápida
+
+Existem milhares de técnicas para criar hashs, se cairmos em hashs simples provavelmente teremos chaves dupicadas e teremos que partir para técnicas de listas ligadas
+
+Visto isso podemos criar melhores funções de hashs:
+http://web.archive.org/web/20071223173210/http://www.concentric.net/~Ttwang/tech/inthash.htm
