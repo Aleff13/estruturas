@@ -56,7 +56,7 @@ var Dictionary = /** @class */ (function () {
         if (this.isEmpty()) {
             return [];
         }
-        return Object.keys(this.table);
+        return this.keyValues().map(function (valuePair) { return valuePair.key; });
     };
     Dictionary.prototype.values = function () {
         var _this = this;
@@ -87,7 +87,9 @@ var Dictionary = /** @class */ (function () {
         return values;
     };
     Dictionary.prototype.forEach = function (callBackFn) {
-        throw new Error("Method not implemented.");
+        //iremos pegar todos os valores
+        var valuePairs = this.keyValues();
+        valuePairs.forEach(function (value) { });
     };
     return Dictionary;
 }());

@@ -71,7 +71,7 @@ class Dictionary implements DictionaryInterface {
     if (this.isEmpty()) {
       return [];
     }
-    return Object.keys(this.table);
+    return this.keyValues().map((valuePair) => valuePair.key);
   }
   values(): string[] | [] {
     //early return
@@ -102,7 +102,9 @@ class Dictionary implements DictionaryInterface {
     return values;
   }
   forEach(callBackFn: void): void {
-    throw new Error("Method not implemented.");
+    //iremos pegar todos os valores
+    const valuePairs = this.keyValues();
+    valuePairs.forEach((value) => {});
   }
 }
 
