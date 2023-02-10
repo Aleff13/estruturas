@@ -1,5 +1,5 @@
 # Data structures
-This repository aims to unite and store knowledge about data structures and their uses in Js/Ts
+This repository stores knowledge about data structures and their uses in Js/Ts
 
 Each folder contains an .md explaining a little about the selected structure
 
