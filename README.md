@@ -22,9 +22,8 @@ node path/file.js
 ```
 
 # Examples
-Some structures have an abstraction of tools that i use everyday, like redis
-In `Dictionary/redisAbstraction.ts` we have an class that implement methods like the redis-cli, GET, SET and FLUSHALL
-
+Some structures have an abstraction of tools that i use everyday, like redis.
+In `Dictionary/redisAbstraction.ts` we have a class that implement methods useds in redis-cli, like: GET, SET and FLUSHALL
 
 # Estruturas
 Esse repositório visa unir e armazenar conhecimentos sobre estruturas de dados e seus usos em Js/Ts
@@ -48,3 +47,8 @@ Rodar o arquivo compilado na forma .js com o node
 ```bash
 node path/file.js
 ```
+
+
+# Exemplos
+Algumas estruturas possuem abstrações de ferramentas que usamos no dia a dia, como o redis
+Em `Dictionary/redisAbstraction.ts` nós temos uma classe que implementa os métodos de um dicionário na forma que usariamos no redis-cli, como: GET, SET e FLUSHALL
