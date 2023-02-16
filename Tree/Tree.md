@@ -17,7 +17,7 @@ Ela pode herdar algumas ideias da busca binária e outros algoritimos de busca, 
 
 Nada mais é que uma forma abstrata de estrutura com hierárquia, na vida real temos exemplos como árvores genealógicas
 
-## Termos
+## Termos e representações visuais
 
 * `Nós/nodes/nodos/keys` --> todo nó possui um pai, exceto a raiz, pode possuir ou não outros nós
 * `Subarvore/nó interno` --> um nó que pode ser visto como arvore, ou seja possui outros nós
