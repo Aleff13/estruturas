@@ -65,3 +65,36 @@ const entendendoRecursao = (voceEntendeuRecursao: boolean) => {
 Note que o método entendendoRecursao continuara chamando a si mesmo até que você tenha entendido a recursão xD
 
 Nessa situação nosso caso base é resposta ser igual a true
+
+Nos exemplos resolvidos com iterações e recursividade podemos adicionar uma analise de que de forma natural as funções iterativas acabam sendo mais rapidas
+
+Porém em termos de legibilidade elas se tornam muito mais simples
+
+Note o exemplo abaixo descrito em `Algorithms/fibonacci.ts`
+
+```ts
+const fibonacciIterative = (number: number) => {
+    if (number < 1) return 0
+    if (number <=2) return 1
+
+    let lastNumber = 0;
+    let currentNumber = 1;
+    let untilNumber = number;
+
+    for (let i = 2; i <= number; i++) {
+        untilNumber = currentNumber + lastNumber
+        lastNumber = currentNumber
+        currentNumber = untilNumber
+    }
+    return untilNumber
+}
+
+const fibonacciRecursive = (number: number): number => {
+    if (number < 1) return 0
+    if (number <=2) return 1
+
+    return fibonacciRecursive(number - 1) + fibonacciRecursive(number - 2)
+}
+```
+
+Apesar do custo a função recursiva é muito mais simples de ler
