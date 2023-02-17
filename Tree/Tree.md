@@ -70,4 +70,4 @@ As arvores podem ser percorridas de diversas formas, dentre elas temos:
 
 ## Post-order [exemplo de uso](https://github.com/Aleff13/estruturas/blob/master/Tree/postOrderTraverse.ts) - [implementacao](https://github.com/Aleff13/estruturas/blob/master/Tree/BinarySearchTree.ts)
 
-![image](https://user-images.githubusercontent.com/83561751/219774367-e71dd547-27f9-4a88-a680-2c0c6536753b.png)
+![image](https://user-images.githubusercontent.com/83561751/219781806-e044903b-f230-41ac-8d82-75c8340ef344.png)
