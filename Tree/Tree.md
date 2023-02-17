@@ -62,30 +62,12 @@ As arvores podem ser percorridas de diversas formas, dentre elas temos:
 
 ## In-order
 
-```
-                 4 o
-                /    \
-             2 o     6o
-             /  \    /  \
-          1 o   3o  5o  7o
-```
+![image](https://user-images.githubusercontent.com/83561751/219772835-83a8e5b9-046c-47d7-ad2c-5e8a12ac15d3.png)
 
 ## Pre-order
 
-```
-                 1 o
-                /    \
-             2 o     5o
-             /  \    /  \
-          3 o   4o  6o  7o
-```
+![image](https://user-images.githubusercontent.com/83561751/219773713-4410b8b3-f533-4c06-a542-50d5ec32a2c3.png)
 
 ## Post-order
 
-```
-                 1 o
-                /    \
-             4 o     7o
-             /  \    /  \
-          2 o   3o  5o  6o
-```
+![image](https://user-images.githubusercontent.com/83561751/219774367-e71dd547-27f9-4a88-a680-2c0c6536753b.png)
