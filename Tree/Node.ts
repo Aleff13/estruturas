@@ -1,7 +1,7 @@
 class aNode {
-    key: string | number;
-    left: aNode | null
-    right: aNode |null
+  key: string | number;
+  left: aNode | null;
+  right: aNode | null;
 
   constructor(key: string | number) {
     this.key = key;
@@ -9,3 +9,5 @@ class aNode {
     this.right = null;
   }
 }
+
+export default aNode;
