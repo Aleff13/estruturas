@@ -4,9 +4,9 @@ import aNode from "./Node";
 interface TreeInterface {
   insert(key: string | number): void;
   search(key: string | number): boolean;
-  isOrderTraverse(): void;
-  preOrderTraverse(): void;
-  postOrderTraverse(): void;
+  inOrderTraverse(callback: any): void;
+  preOrderTraverse(callback: any): void;
+  postOrderTraverse(callback: any): void;
   min(): string | number | undefined;
   max(): string | number | undefined;
   remove(key: string | number): void;
@@ -54,17 +54,47 @@ class BinarySearchTree implements TreeInterface {
     }
     this.insertNode(this.root, key);
   }
+
   search(key: string | number): boolean {
     throw new Error("Method not implemented.");
   }
-  isOrderTraverse(): void {
-    throw new Error("Method not implemented.");
+
+  /**
+   * Percorre a arvore em ordem
+   * @param callback
+   */
+  inOrderTraverse(callback: any): void {
+    this.inOrderTraverseNode(this.root, callback);
   }
-  preOrderTraverse(): void {
-    throw new Error("Method not implemented.");
+  private inOrderTraverseNode(node: aNode | null, callback: any) {
+    if (node != null) {
+      this.inOrderTraverseNode(node.left, callback);
+      callback(node.key);
+      this.inOrderTraverseNode(node.right, callback);
+    }
   }
-  postOrderTraverse(): void {
-    throw new Error("Method not implemented.");
+
+  preOrderTraverse(callback: any): void {
+    this.preOrderTraverseNode(this.root, callback);
+  }
+
+  private preOrderTraverseNode(node: aNode | null, callback: any) {
+    if (node != null) {
+      callback(node.key);
+      this.preOrderTraverseNode(node.left, callback);
+      this.preOrderTraverseNode(node.right, callback);
+    }
+  }
+
+  postOrderTraverse(callback: any): void {
+    this.postOrderTraverseNode(this.root, callback);
+  }
+  private postOrderTraverseNode(node: aNode | null, callback: any) {
+    if (node != null) {
+      this.preOrderTraverseNode(node.left, callback);
+      this.preOrderTraverseNode(node.right, callback);
+      callback(node.key);
+    }
   }
   min(): string | number | undefined {
     throw new Error("Method not implemented.");

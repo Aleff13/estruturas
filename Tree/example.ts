@@ -10,4 +10,4 @@ tree.insert(15);
 tree.insert(7);
 tree.insert(8);
 
-console.table(tree.root?.right?.right?.right);
+console.table(tree.root);

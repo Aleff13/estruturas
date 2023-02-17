@@ -46,14 +46,39 @@ var BinarySearchTree = /** @class */ (function () {
     BinarySearchTree.prototype.search = function (key) {
         throw new Error("Method not implemented.");
     };
-    BinarySearchTree.prototype.isOrderTraverse = function () {
-        throw new Error("Method not implemented.");
+    /**
+     * Percorre a arvore em ordem
+     * @param callback
+     */
+    BinarySearchTree.prototype.inOrderTraverse = function (callback) {
+        this.inOrderTraverseNode(this.root, callback);
     };
-    BinarySearchTree.prototype.preOrderTraverse = function () {
-        throw new Error("Method not implemented.");
+    BinarySearchTree.prototype.inOrderTraverseNode = function (node, callback) {
+        if (node != null) {
+            this.inOrderTraverseNode(node.left, callback);
+            callback(node.key);
+            this.inOrderTraverseNode(node.right, callback);
+        }
     };
-    BinarySearchTree.prototype.postOrderTraverse = function () {
-        throw new Error("Method not implemented.");
+    BinarySearchTree.prototype.preOrderTraverse = function (callback) {
+        this.preOrderTraverseNode(this.root, callback);
+    };
+    BinarySearchTree.prototype.preOrderTraverseNode = function (node, callback) {
+        if (node != null) {
+            callback(node.key);
+            this.preOrderTraverseNode(node.left, callback);
+            this.preOrderTraverseNode(node.right, callback);
+        }
+    };
+    BinarySearchTree.prototype.postOrderTraverse = function (callback) {
+        this.postOrderTraverseNode(this.root, callback);
+    };
+    BinarySearchTree.prototype.postOrderTraverseNode = function (node, callback) {
+        if (node != null) {
+            this.preOrderTraverseNode(node.left, callback);
+            this.preOrderTraverseNode(node.right, callback);
+            callback(node.key);
+        }
     };
     BinarySearchTree.prototype.min = function () {
         throw new Error("Method not implemented.");
