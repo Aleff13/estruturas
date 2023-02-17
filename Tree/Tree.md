@@ -60,14 +60,14 @@ As arvores podem ser percorridas de diversas formas, dentre elas temos:
 - pre-ordem/pre-order -> realiza a iteração primeiramente pelos nós e depois chega aos descendentes
 - pós-ordem/post-order -> percorre os nós depois de precorrer os descendentes
 
-## In-order
+## In-order [exemplo de uso](https://github.com/Aleff13/estruturas/blob/master/Tree/inOrderTraverse.ts) - [implementacao](https://github.com/Aleff13/estruturas/blob/master/Tree/BinarySearchTree.ts)
 
 ![image](https://user-images.githubusercontent.com/83561751/219772835-83a8e5b9-046c-47d7-ad2c-5e8a12ac15d3.png)
 
-## Pre-order
+## Pre-order [exemplo de uso](https://github.com/Aleff13/estruturas/blob/master/Tree/preOrderTraverse.ts) - [implementacao](https://github.com/Aleff13/estruturas/blob/master/Tree/BinarySearchTree.ts)
 
 ![image](https://user-images.githubusercontent.com/83561751/219773713-4410b8b3-f533-4c06-a542-50d5ec32a2c3.png)
 
-## Post-order
+## Post-order [exemplo de uso](https://github.com/Aleff13/estruturas/blob/master/Tree/postOrderTraverse.ts) - [implementacao](https://github.com/Aleff13/estruturas/blob/master/Tree/BinarySearchTree.ts)
 
 ![image](https://user-images.githubusercontent.com/83561751/219774367-e71dd547-27f9-4a88-a680-2c0c6536753b.png)
