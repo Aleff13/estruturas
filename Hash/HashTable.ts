@@ -59,7 +59,7 @@ class HashTable implements HashTableInterface {
   }
 
   /**
-   * Esse méotodo protegido retorna o hashCode com base em uma chave
+   * Esse método protegido retorna o hashCode com base em uma chave
    * @param key Chave da qual queremos busca a posição
    * @returns retorna um número
    */
