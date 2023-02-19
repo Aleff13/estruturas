@@ -14,3 +14,5 @@ Dada uma key, esse método cria um hashCode para essa key, ele pode se tornar mu
 ou para realizar uma busca utilizando essa key
 
 Normalmente fariamos uma iteração elemento por elemento ou então uma busca binária, nesse caso basta chamar este método e saberemos exatemente o index da chave
+
+![image](https://user-images.githubusercontent.com/83561751/219980854-70e2fa2a-dcf5-42bd-aacf-b3a2ddb66dee.png)
