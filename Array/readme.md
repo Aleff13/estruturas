@@ -67,5 +67,4 @@ métodos: [
   ]
 ```
 
-![image](https://user-images.githubusercontent.com/83561751/220172462-fd4ab09a-3e30-432c-81b6-5abf9fa6756a.png)
-
+![image](https://user-images.githubusercontent.com/83561751/220172732-3b202803-fcb8-444d-917b-3ac9a1832783.png)
