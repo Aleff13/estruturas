@@ -66,3 +66,6 @@ métodos: [
     'findLastIndex'
   ]
 ```
+
+![image](https://user-images.githubusercontent.com/83561751/220172462-fd4ab09a-3e30-432c-81b6-5abf9fa6756a.png)
+
