@@ -100,3 +100,8 @@ class BinarySearch {
   };
 }
 ```
+
+## Implementação visual 
+Note a recursão que ocorre nas verificações de valores
+
+![image](https://user-images.githubusercontent.com/83561751/220446703-840b0043-d329-4635-9a83-bbfb9c427fd4.png)
