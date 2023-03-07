@@ -10,3 +10,7 @@ export const compare = <T>(a: T, b: T): number => {
   }
   return a < b ? CompareEnum.LESS_THAN : CompareEnum.BIGGER_THAN;
 };
+
+export const defaultEquals = (a: string | number, b: string | number) => {
+  return a === b;
+};
