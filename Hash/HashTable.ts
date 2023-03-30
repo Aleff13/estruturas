@@ -20,7 +20,7 @@ class HashTable implements HashTableInterface {
   }
 
   /**
-   * Esse método insere um valor na tabela trasnformando a chave em um hash
+   * Esse método insere um valor na tabela transformando a chave em um hash
    * @param key Chave do valor
    * @param value Valor a ser armazenada
    * @returns O hash gerado a partir da chave
