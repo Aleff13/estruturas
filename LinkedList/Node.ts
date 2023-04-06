@@ -1,10 +1,10 @@
 class aNode {
-  element: any;
-  next: undefined;
+  element: aNode | undefined;
+  next: aNode | undefined;
 
-  constructor(element: string | number) {
+  constructor(element: aNode | undefined) {
     this.element = element;
-    this.next = undefined;
+    this.next;
   }
 }
 

@@ -4,7 +4,7 @@
 //nos códigos temos o exemplo dos stashs que são trechos de códigos salvos em uma pilha para retorno posterior
 
 class Stack {
-  items: any[];
+  private items: any[];
 
   constructor(values: any[] = []) {
     this.items = values;
