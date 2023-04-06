@@ -42,12 +42,12 @@ public:
     }
 
     // private:
-    int keyToHash(string value)
+    int keyToHash(string key)
     {
         int hash = 0;
-        for (int i = 0; i < value.length(); i++)
+        for (int i = 0; i < key.length(); i++)
         {
-            hash = hash + int((char)value[i]) + (int)(i * 31) + int((char)value[i] * i);
+            hash = hash + int((char)key[i]) + (int)(i * 31) + int((char)key[i] * i);
         }
         hash = (int)(hash % length);
         return hash;
