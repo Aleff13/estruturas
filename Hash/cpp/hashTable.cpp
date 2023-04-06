@@ -3,7 +3,7 @@
 
 using namespace std;
 
-static const int length = 10000; // This hash length
+static const int length = 1000; // This hash length
 
 class HashTable
 {
@@ -41,7 +41,7 @@ public:
         return hashtable[hashKey];
     }
 
-private:
+    // private:
     int keyToHash(string value)
     {
         int hash = 0;
