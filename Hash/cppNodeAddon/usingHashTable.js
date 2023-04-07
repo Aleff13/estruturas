@@ -1,0 +1,12 @@
+"use strict";
+exports.__esModule = true;
+var hashTableTyped_1 = require("./hashTableTyped");
+var hashTableObj = new hashTableTyped_1["default"]();
+var valueToPut = "value";
+hashTableObj.put("key", valueToPut);
+var savedValue = hashTableObj.get("key");
+var keyHash = hashTableObj.keyToHash("key");
+console.log({ keyHash: keyHash });
+console.log({ savedValue: savedValue });
+console.log({ valueToPut: valueToPut });
+hashTableObj.destructor();
