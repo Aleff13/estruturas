@@ -120,6 +120,19 @@ class Sort {
 
     return list;
   }
+
+  static bubbleSort(list: number[]): number[] {
+    for (let i = 0; i < list.length; i++) {
+      for (let j = 0; j < list.length; j++) {
+        const next = j + 1;
+        if (list[j] > list[next]) {
+          [list[j], list[next]] = [list[next], list[j]]; //swap values
+        }
+      }
+    }
+
+    return list;
+  }
 }
 
 export default Sort;
@@ -143,4 +156,9 @@ export default Sort;
 
 // console.time("Insertion small list");
 // Sort.insertion(smallList);
+// console.timeEnd("Insertion small list");
+
+// console.time("Insertion small list");
+// console.table(smallList);
+// console.table(Sort.bubbleSort(smallList));
 // console.timeEnd("Insertion small list");

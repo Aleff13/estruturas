@@ -1,0 +1,140 @@
+"use strict";
+exports.__esModule = true;
+var Sort = /** @class */ (function () {
+    function Sort() {
+    }
+    /**
+     * Performs a sort selection in a list of numbers
+     * @param list
+     * @param sortBy if true return lowest to higher, if false reverse
+     * @returns
+     *
+     * Iterates the list to find the lowest value, save the lowest value in the next index
+     *
+     * Its a great algorithm for a little list, no for big list
+     */
+    Sort.selection = function (list, sortBy) {
+        var _a;
+        if (sortBy === void 0) { sortBy = true; }
+        var swapPosition;
+        for (var current = 0; current < list.length; current++) {
+            swapPosition = current;
+            for (var unSorted = current + 1; unSorted < list.length; unSorted++) {
+                var order = sortBy
+                    ? list[unSorted] < list[current]
+                    : list[unSorted] > list[current];
+                if (order) {
+                    swapPosition = unSorted; //swapPosition now is the lowest value inside this iteration
+                }
+            }
+            var swapPositionHasChanged = swapPosition != current;
+            if (swapPositionHasChanged) {
+                //if swapPosition has changed in previous loop we need to swap values
+                _a = [
+                    list[swapPosition],
+                    list[current],
+                ], list[current] = _a[0], list[swapPosition] = _a[1]; //swaping values
+            }
+        }
+        return list;
+    };
+    /**
+     * Sort a list of numbers with insertion sort
+     * @param list
+     * @param sortBy if true return lowest to higher, if false reverse
+     * @returns
+     */
+    Sort.insertion = function (list, sortBy) {
+        if (sortBy === void 0) { sortBy = true; }
+        if (!sortBy) {
+            return this.insertionDesc(list); //call insertion desc
+        }
+        for (var current = 0; current < list.length; current++) {
+            //iterates each element in the list
+            var value = list[current]; //get current value by index
+            var previous = current - 1; //get previous index
+            while (previous >= 0 && value < list[previous]) {
+                //iterates while current value is lowest than previous value
+                list[previous + 1] = list[previous]; //change the position of current value in list to left
+                previous = previous - 1; //reduces previous index
+            }
+            list[previous + 1] = value; //save the value in correct position
+        }
+        return list;
+    };
+    Sort.insertionDesc = function (list) {
+        for (var current = 0; current < list.length; current++) {
+            var value = list[current];
+            var previous = current - 1;
+            while (previous >= 0 && value > list[previous]) {
+                list[previous - 1] = list[previous];
+                previous = previous + 1;
+            }
+            list[previous + 1] = value;
+        }
+        return list;
+    };
+    Sort.counting = function (list) {
+        var count = new Array(); //array counter
+        var listSize = list.length;
+        var result = [];
+        // count = [0, 0, 0, 0, 0, ... 0]
+        for (var currentIndex = 0; currentIndex < listSize; currentIndex++) {
+            count[currentIndex] = 0;
+        }
+        // count = [1, 0, 2, 1, 0, 1, 4, ... 1]
+        for (var currentIndex = 0; currentIndex < listSize; currentIndex++) {
+            var currentValue = list[currentIndex];
+            count[currentValue] += 1;
+        }
+        // monta o novo array com base na quantidade de ocorrencias no contador
+        for (var currentIndex = 0; currentIndex < listSize; currentIndex++) {
+            for (var j = 0; j < count[currentIndex]; j++) {
+                result.push(currentIndex);
+            }
+        }
+        return result;
+    };
+    Sort.listGenerator = function (size) {
+        var list = [];
+        var max = 10;
+        for (var i = 0; i < size; i++) {
+            var number = Math.floor(Math.random() * max);
+            list.push(number);
+        }
+        return list;
+    };
+    Sort.bubbleSort = function (list) {
+        var _a;
+        for (var i = 0; i < list.length; i++) {
+            for (var j = 0; j < list.length; j++) {
+                var next = j + 1;
+                if (list[j] > list[next]) {
+                    _a = [list[next], list[j]], list[j] = _a[0], list[next] = _a[1]; //swap values
+                }
+            }
+        }
+        return list;
+    };
+    return Sort;
+}());
+exports["default"] = Sort;
+// const bigList = Sort.listGenerator(100000);
+var smallList = Sort.listGenerator(10);
+// console.log(Sort.counting(smallList));
+// console.time("Selection big list");
+// Sort.selection(bigList);
+// console.timeEnd("Selection big list");
+// console.time("Insertion big list");
+// Sort.insertion(bigList);
+// console.timeEnd("Insertion big list");
+// console.time("Selection small list");
+// Sort.selection(smallList);
+// console.timeEnd("Selection small list");
+// console.time("Insertion small list");
+// Sort.insertion(smallList);
+// console.timeEnd("Insertion small list");
+console.time("Insertion small list");
+console.table(smallList);
+console.table(Sort.bubbleSort(smallList));
+console.timeEnd("Insertion small list");
