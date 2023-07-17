@@ -1,29 +1,21 @@
 "use strict";
 exports.__esModule = true;
-var ffi = require("ffi-napi");
-//import c++ lib
-var stackLib = ffi.Library("./stack.so", {
-    "createStack": ['pointer', []],
-    'deleteStack': ['void', ['pointer']],
-    "push": ['void', ['pointer', 'string']],
-    "pop": ['void', ['pointer']],
-    "peek": ['string', ['pointer']]
-});
+var stack_lib_1 = require("./stack.lib");
 var Stack = /** @class */ (function () {
     function Stack() {
-        this.obj = stackLib.createStack();
+        this.obj = stack_lib_1["default"].createStack();
     }
     Stack.prototype.push = function (value) {
-        stackLib.push(this.obj, value);
+        stack_lib_1["default"].push(this.obj, value);
     };
     Stack.prototype.pop = function () {
-        return stackLib.keyToHash(this.obj);
+        return stack_lib_1["default"].keyToHash(this.obj);
     };
     Stack.prototype.peek = function () {
-        return stackLib.peek(this.obj);
+        return stack_lib_1["default"].peek(this.obj);
     };
     Stack.prototype.destructor = function () {
-        stackLib.deleteStack(this.obj);
+        stack_lib_1["default"].deleteStack(this.obj);
     };
     return Stack;
 }());

@@ -1,13 +1,4 @@
-const ffi = require("ffi-napi")
-
-//import c++ lib
-const stackLib = ffi.Library("./stack.so", {
-    "createStack": ['pointer', []],
-    'deleteStack': ['void', ['pointer']],
-    "push": ['void', ['pointer', 'string']],
-    "pop": ['void', ['pointer']],
-    "peek": ['string', ['pointer']],
-});
+import stackLib from './stack.lib';
 
 class Stack {
     obj: any;
