@@ -18,6 +18,7 @@ public:
         }
     }
 
+    // Adds an element in top
     void push(const char *value)
     {
         size = size + 1;
@@ -26,34 +27,64 @@ public:
         stack[size] = newValue;
     }
 
+    // Removes the element in top
     void pop()
     {
         stack[size] = NULL;
         size = size - 1;
     }
 
+    // Show the value in top
     const char *peek()
     {
         return stack[size];
     }
 };
 
-int main()
+extern "C"
 {
-    Stack stackzin;
+    Stack *createStack()
+    {
+        return new Stack();
+    }
 
-    stackzin.push("uhu");
-    stackzin.push("valor");
+    void deleteStack(Stack *obj)
+    {
+        delete obj;
+    }
 
-    cout << stackzin.peek() << endl; // show the last added element
+    void push(Stack *obj, const char *value)
+    {
+        return obj->push(value);
+    }
 
-    stackzin.pop();
+    void pop(Stack *obj)
+    {
+        obj->pop();
+    }
 
-    cout << stackzin.peek() << endl; // show the last added element
-
-    stackzin.push("bloft");
-
-    cout << stackzin.peek() << endl; // show the last added element
-
-    return 0;
+    const char *peek(Stack *obj)
+    {
+        return obj->peek();
+    }
 }
+
+// int main()
+// {
+//     Stack stackzin;
+
+//     stackzin.push("uhu");
+//     stackzin.push("valor");
+
+//     cout << stackzin.peek() << endl; // show the last added element
+
+//     stackzin.pop();
+
+//     cout << stackzin.peek() << endl; // show the last added element
+
+//     stackzin.push("bloft");
+
+//     cout << stackzin.peek() << endl; // show the last added element
+
+//     return 0;
+// }
